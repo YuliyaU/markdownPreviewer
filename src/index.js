@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {App} from '../src/components/App';
 
 window.React = React;
 
 ReactDOM.render(
-    <h1>Markdown Previewer</h1>, 
+    <App />, 
     document.getElementById('root')
 );

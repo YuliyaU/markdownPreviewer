@@ -4,8 +4,9 @@
   "description": "Free Code Camp assignment to develop a previewer of GitHub-flavored markdown with React ",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack",
-    "start": "node server.js"
+    "watch-webpack": "webpack -w",
+    "launch-server": "node server.js",
+    "start": "npm-run-all --parallel watch-webpack launch-server"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "npm-run-all": "^4.1.2",
     "webpack": "^3.10.0"
   }
 }
