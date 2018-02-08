@@ -33,10 +33,14 @@ export class Previewer extends Component {
 
     render() {        
         return (
-            <form>
-                <textarea onChange={this.onChangeHandler} 
+            <form className="row">
+                <textarea className="six column"    
+                          style={{height: '60vh'}}
+                          onChange={this.onChangeHandler} 
                           defaultValue={this.state.textToConvert}/>
-                <output id="preview-field"/>
+                <output id="preview-field"
+                        className="six column"
+                        style={{height: '60vh', padding: '0 1.0rem', border: '1px solid #ccc', overflowY: 'scroll'}}/>
             </form>
         );
     }
