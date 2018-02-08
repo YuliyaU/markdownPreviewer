@@ -7,26 +7,35 @@ export class Previewer extends Component {
         this.state = {
             textToConvert: '# Marked in browser\n\nRendered by **marked**.'
         };
-//        this.convertMarkdown = this.convertMarkdown.bind(this);
+       this.convertMarkdown = this.convertMarkdown.bind(this);
+       this.onChangeHandler = this.onChangeHandler.bind(this);
     }
 
-    // convertMarkdown() {
-    //     // this.setState({
-    //     //     textToConvert: _input
-    //     // });
-    //     document.getElementById('preview-field').innerHTML = 
-    //         marked(this.state.textToConvert);
-    // }
-
-    componentDidMount() {        
+    convertMarkdown() {         
         document.getElementById('preview-field').innerHTML = 
             marked(this.state.textToConvert);
+    }
+
+    onChangeHandler(event) {
+        if (event) {
+            this.setState({
+                textToConvert: event.target.value
+            // This callback function lets to set state without any delay
+            }, () => {
+                this.convertMarkdown();
+            });
+        }       
+    }
+
+    componentDidMount() {        
+        this.convertMarkdown();
     }
 
     render() {        
         return (
             <form>
-                <textarea defaultValue={this.state.textToConvert}/>
+                <textarea onChange={this.onChangeHandler} 
+                          defaultValue={this.state.textToConvert}/>
                 <output id="preview-field"/>
             </form>
         );
