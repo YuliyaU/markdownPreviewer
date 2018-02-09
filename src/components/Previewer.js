@@ -1,5 +1,6 @@
 import {Component} from "react";
 import marked from 'marked';
+import '../stylesheets/previewer.scss';
 
 export class Previewer extends Component {
     constructor(props) {
@@ -34,13 +35,11 @@ export class Previewer extends Component {
     render() {        
         return (
             <form className="row">
-                <textarea className="six column"    
-                          style={{height: '60vh'}}
+                <textarea className="six column input-field"
                           onChange={this.onChangeHandler} 
                           defaultValue={this.state.textToConvert}/>
                 <output id="preview-field"
-                        className="six column"
-                        style={{height: '60vh', padding: '0 1.0rem', border: '1px solid #ccc', overflowY: 'scroll'}}/>
+                        className="six column preview-field"/>
             </form>
         );
     }

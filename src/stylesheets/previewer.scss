@@ -1,0 +1,11 @@
+$previewerHeight: 60vh;
+
+textarea.input-field, .preview-field {
+    height: $previewerHeight;
+}
+
+.preview-field {
+    padding: 0 1.0rem;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+}
