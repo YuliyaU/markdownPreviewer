@@ -1,5 +1,22 @@
+/**************************
+Table of contents:
+---------------------------
+0. Sass Variables
+1. CSS Reset
+2. Custom CSS Styles
+**************************/
+/*** 0. Sass variables ***/
+/*** 1. CSS Reset ***/
+header {
+  font-size: 2.6rem;
+  padding: 1.5rem 0px; }
+
+textarea {
+  margin-bottom: 0; }
+
+/*** 2. Custom CSS Styles ***/
 textarea.input-field, .preview-field {
-  height: 60vh; }
+  height: 70vh; }
 
 .input-field {
   border: 1px solid #ccc;
@@ -13,3 +30,6 @@ textarea.input-field, .preview-field {
   padding: 0 1.0rem;
   border: 1px solid #ccc;
   overflow-y: scroll; }
+
+output.preview-field {
+  font-size: 14px; }

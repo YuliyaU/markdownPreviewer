@@ -4,7 +4,7 @@ import {Footer} from './Footer';
 export const App = () => {
     return (
         <div className="container">
-            <h1>Markdown Previewer</h1>  
+            <header>Markdown Previewer</header>  
             <Previewer />   
             <Footer />       
         </div>

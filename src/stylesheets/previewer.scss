@@ -1,20 +1,50 @@
-$previewerHeight: 60vh;
+/**************************
+Table of contents:
+---------------------------
+0. Sass Variables
+1. CSS Reset
+2. Custom CSS Styles
+**************************/
+
+/*** 0. Sass variables ***/
+
+$previewerHeight: 70vh;
+
+$neutralColor: #ccc;
+$accentColor: #9f9fe0;
+
+/*** 1. CSS Reset ***/
+
+header {
+    font-size: 2.6rem;
+    padding: 1.5rem 0px;
+}
+
+textarea {
+    margin-bottom: 0;
+}
+
+/*** 2. Custom CSS Styles ***/
 
 textarea.input-field, .preview-field {
     height: $previewerHeight;
 }
 
 .input-field {
-    border: 1px solid #ccc;
+    border: 1px solid $neutralColor;
     // The use of a transition here is for the PostCSS autoprefixer testing 
     transition: border 0.5s;
     &:hover {
-        border: 3px solid #9f9fe0; 
+        border: 3px solid $accentColor; 
     }
 }
 
 .preview-field {
     padding: 0 1.0rem;
-    border: 1px solid #ccc;
+    border: 1px solid $neutralColor;
     overflow-y: scroll;
+}
+
+output.preview-field {
+    font-size: 14px;
 }
