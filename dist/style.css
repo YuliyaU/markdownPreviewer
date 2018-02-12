@@ -1,0 +1,15 @@
+textarea.input-field, .preview-field {
+  height: 60vh; }
+
+.input-field {
+  border: 1px solid #ccc;
+  -webkit-transition: border 0.5s;
+  -o-transition: border 0.5s;
+  transition: border 0.5s; }
+  .input-field:hover {
+    border: 3px solid #9f9fe0; }
+
+.preview-field {
+  padding: 0 1.0rem;
+  border: 1px solid #ccc;
+  overflow-y: scroll; }

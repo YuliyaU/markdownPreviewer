@@ -1,10 +1,11 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
-const extractSass = new ExtractTextPlugin({
-    filename: '[name].[contenthash].css',
-    disable: process.env.NODE_ENV === 'development'
-});
+// const extractSass = new ExtractTextPlugin({
+//     filename: '[name].[contenthash].css',
+//     disable: process.env.NODE_ENV === 'development'
+// });
 
 module.exports = {
     entry: './src/index.js',
@@ -22,9 +23,20 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: extractSass.extract({
+                use: ExtractTextPlugin.extract({
                     use: [{
                         loader: 'css-loader'
+                    }, {
+                        // postcss-loader should be placed after css-loader and style-loader but
+                        // before sass|scss|less loaders 
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                autoprefixer({
+                                    browsers: ['ie >= 8', 'last 4 version']
+                                })
+                            ]
+                        }
                     }, {
                         loader: 'sass-loader'
                     }],
@@ -35,6 +47,7 @@ module.exports = {
         ]
     },
     plugins: [
-        extractSass
+        // extractSass
+        new ExtractTextPlugin('style.css')
     ]
 };

@@ -4,6 +4,15 @@ textarea.input-field, .preview-field {
     height: $previewerHeight;
 }
 
+.input-field {
+    border: 1px solid #ccc;
+    // The use of a transition here is for the PostCSS autoprefixer testing 
+    transition: border 0.5s;
+    &:hover {
+        border: 3px solid #9f9fe0; 
+    }
+}
+
 .preview-field {
     padding: 0 1.0rem;
     border: 1px solid #ccc;
